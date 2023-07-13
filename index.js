@@ -41,6 +41,10 @@ app.post("/api/ai-content", async (req, res) => {
   res.status(201).json({ output: content });
 });
 
+app.get('*', (req,res)=>{
+  res.status(200).send({message:  'AshAi Api', visit: 'https://ashai.netlify.app/'});
+})
+
 const port = process.env.PORT || 6001;
 
 app.listen(port, () => {
